@@ -1,12 +1,10 @@
 import kotlin.system.measureTimeMillis
 
+
 fun main(args: Array<String>) {
 
 
-    val ingredients = listOf<String>("Agua", "Leche", "Carne", "Verduras", "Frutas", "Cereal", "Huevos", "Aceite")
-
     val welcomeMessage = """:: Bienvenido a Recipe Maker ::
-            
             
     Selecciona la opción deseada
     1. Hacer una receta
@@ -45,3 +43,22 @@ fun checkAnswer(ans: String?): String {
     }
 
 }
+
+
+fun makeRecipe(){
+    val ingredients = listOf<String>("Agua", "Leche", "Carne", "Verduras", "Frutas", "Cereal", "Huevos", "Aceite")
+    println("Selecciona por categoría el ingrediente que buscas: ")
+    for ((index,ingredient) in ingredients.withIndex()){
+        println("${index+1}. $ingredient ")
+    }
+}
+
+fun viewRecipe(category: Int){
+    when(category){
+        1 -> println("Hacer una receta")
+        2 -> println("Ver mis recetas")
+        3 -> println("Salir")
+    }
+
+}
+
